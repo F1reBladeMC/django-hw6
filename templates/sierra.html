@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="company-info">
+    {% if company_info %}
+        <h1>{{ company_info.name }}</h1>
+        <div class="about">
+            <h2>О компании</h2>
+            <p>{{ company_info.about }}</p>
+        </div>
+        
+        <div class="contact-info">
+            <h2>Контактная информация</h2>
+            <p><strong>Телефон:</strong> {{ company_info.phone }}</p>
+            <p><strong>Email:</strong> {{ company_info.email }}</p>
+            <p><strong>Адрес:</strong> {{ company_info.address }}</p>
+            <p><strong>Часы работы:</strong> {{ company_info.working_hours }}</p>
+        </div>
+        
+        <div class="navigation">
+            <a href="{% url 'homepage' %}" class="btn">На главную</a>
+        </div>
+    {% else %}
+        <p>Информация о компании не найдена</p>
+    {% endif %}
+</div>
+{% endblock %}

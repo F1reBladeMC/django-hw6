@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if my_info %}{{ my_info.name }}{% else %}Сайт{% endif %}</title>
+</head>
+<body>
+    {% if my_info %}
+    <header>
+        <div class="profile">
+            {% if my_info.photo %}
+                <img src="{{ my_info.photo.url }}" alt="{{ my_info.name }}" width="100" height="100">
+            {% endif %}
+            <h1>{{ my_info.name }}</h1>
+            <p>{{ my_info.profession }}</p>
+            <p>Возраст: {{ my_info.age }}</p>
+        </div>
+    </header>
+    {% endif %}
+    
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="homepage">
+    <h1>{{ title }}</h1>
+    <p>{{ greeting }}</p>
+    <div class="navigation">
+        <a href="{% url 'urmat' %}" class="btn">Далее</a>
+    </div>
+</div>
+{% endblock %}
